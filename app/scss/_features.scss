@@ -1,0 +1,51 @@
+/*======================================================*/
+ /***  Features Section CSS STYLE     ***/
+ /***  EasyBank    ***/
+/*======================================================*/
+
+.features{
+    background: $lightGrayishBlue;
+
+    &__content{
+        text-align: center;
+
+        @include breakpoint-up(medium){
+            text-align: left;
+        }
+    }
+
+    &__intro{
+        
+        margin-bottom: 6rem;
+
+        @include breakpoint-up(medium){
+            width: 55%;
+            margin-left: 0;
+        }
+    }
+  
+    &__flex{
+        
+        @include breakpoint-up(medium){
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__item{
+        img{
+            width: 7.2rem;
+            height: auto;
+            margin-bottom: 3rem;
+        }
+        @include breakpoint-up(medium){
+            flex: 1 0 50%;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+        @include breakpoint-up(large){
+            flex: 1;
+        }
+
+    }
+
+}

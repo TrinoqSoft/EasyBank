@@ -1,0 +1,138 @@
+/*======================================================*/
+ /***  Articles Section CSS STYLE     ***/
+ /***  EasyBank    ***/
+/*======================================================*/
+
+.footer{
+    background: $darkBlue;
+    color: $white;
+    .container--pa{
+        padding-top: 4rem;
+        padding-bottom: 4.5rem;
+
+        @include breakpoint-up(large){
+            padding-right: 4rem;
+            padding-bottom: 3rem;
+            padding-left: 4rem;
+        }
+    }
+
+    &__grid{
+        text-align: center;
+        
+        @include breakpoint-up(large){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 2fr;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+                "logo menu1 menu2 btn"
+                "social menu1 menu2 copyright";
+            gap: 1.6rem;
+            justify-items: start;
+        }
+    }
+
+    &__logo{
+        margin-bottom: 3rem;
+
+        @include breakpoint-up(large){
+            grid-area: logo;
+            margin-bottom: 0;
+        }
+        a{
+            display: inline-block;
+            transition: opacity 150ms ease-in-out;
+
+            &:hover{
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__social{
+        margin-bottom: 3rem;
+        
+        @include breakpoint-up(large){
+            grid-area: social;
+            margin-bottom: 0;
+        }
+
+        ul>li{
+            display: inline-block;
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+
+            a{
+                display: inline-block;
+
+                svg {
+                    border-radius: .3rem;
+                    path{
+                        transition: fill 150ms ease-in-out;
+                    }
+                }
+                &:hover svg path{
+                    fill: $limeGreen;
+                }
+            }
+        }
+    }
+
+    &__menu{
+        ul>li{
+            a{
+                display: block;
+                color: $white;
+                padding: .5rem 0;
+                transition: color 150ms ease-in-out;
+
+                &:hover{
+                    color: $limeGreen;
+                }
+            }
+
+        }
+
+        @include breakpoint-up(large){
+            text-align: left;
+        }
+
+        &.col-01{
+            
+            @include breakpoint-up(large){
+                grid-area: menu1;
+                justify-self: end;
+                padding-right: 3rem;
+            }
+        }
+        &.col-02{
+
+            margin-bottom: 3rem;
+            
+            @include breakpoint-up(large){
+                grid-area: menu2;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__btn{
+        
+        margin-bottom: 3rem;
+            
+        @include breakpoint-up(large){
+            grid-area: btn;
+            justify-self: end;
+            margin-bottom: 0;
+        }
+    }
+
+    &__copyright{
+            
+        @include breakpoint-up(large){
+            grid-area: copyright;
+            justify-self: end;
+        }
+    }
+}
